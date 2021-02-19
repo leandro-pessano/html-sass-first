@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header, footer {
+  background-color: pink;
+  height: 80px;
+}
+
+main {
+  display: flex;
+}
+main .center {
+  width: 60%;
+  background-color: orange;
+}
+main .left, main .right {
+  width: calc(100% - 60%);
+  background-color: lightblue;
+  color: pink;
+}

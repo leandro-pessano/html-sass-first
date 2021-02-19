@@ -1,0 +1,36 @@
+$color_pink: pink;
+$h_80: 80px;
+$percent_60: 60%;
+$vh_100: 100vh;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin bars {
+  background-color: $color_pink;
+  height: $h_80;
+}
+
+@mixin columns {
+  width: calc(100% - #{$percent_60});
+  background-color: lightblue;
+  color: $color_pink;
+}
+
+header, footer {
+  @include bars;
+}
+
+main {
+  display: flex;
+  .center {
+    width: $percent_60;
+    background-color: orange;
+  }
+  .left, .right {
+    @include columns;
+  }
+}
