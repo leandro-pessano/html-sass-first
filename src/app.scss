@@ -1,4 +1,4 @@
-$color_pink: pink;
+$color_salmon: salmon;
 $h_80: 80px;
 $percent_60: 60%;
 $vh_100: 100vh;
@@ -9,23 +9,34 @@ $vh_100: 100vh;
   box-sizing: border-box;
 }
 
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin bars {
-  background-color: $color_pink;
+  background-color: $color_salmon;
   height: $h_80;
 }
 
 @mixin columns {
-  width: calc(100% - #{$percent_60});
+  width: calc((100% - #{$percent_60}) / 2);
   background-color: lightblue;
-  color: $color_pink;
+  color: $color_salmon;
 }
 
 header, footer {
+  @include flex_center;
   @include bars;
 }
 
 main {
+  height: calc(#{$vh_100} - #{$h_80 * 2});
   display: flex;
+  .left, .center, .right {
+    @include flex_center;
+  }
   .center {
     width: $percent_60;
     background-color: orange;
